@@ -4,4 +4,5 @@ project(lecture_1)
 set(CMAKE_CXX_STANDARD 23)
 
 add_executable(lecture_1 main.cpp
+        ex02.cpp
 )
