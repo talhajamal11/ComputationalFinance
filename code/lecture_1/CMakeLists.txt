@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(lecture_1 main.cpp
         ex02.cpp
+        main01.cpp
+        Options02.cpp
+        Main06.cpp
 )
