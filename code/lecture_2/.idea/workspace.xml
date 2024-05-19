@@ -21,21 +21,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3791e15-7124-4d6e-9fe4-6bde4d625713" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DefInt.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DefInt.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main09.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main10.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Options05.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Options05.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Options06.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Options06.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DoubDigitOpt.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DoubDigitOpt.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-f104b8cdb3d3a832f68a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-3d94224e2631223ebbaf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-23T09-33-01-0040.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-lecture_2-Debug-e8a61eb5cf01efc9ee03.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7c6efbfbcec040445359.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-04-30T08-20-04-0032.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-lecture_2-Debug-40da76c5da68056adb0a.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
     </list>
@@ -106,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713864735230</updated>
       <workItem from="1713864736249" duration="4439000" />
-      <workItem from="1714464536160" duration="667000" />
+      <workItem from="1714464536160" duration="1625000" />
     </task>
     <servers />
   </component>

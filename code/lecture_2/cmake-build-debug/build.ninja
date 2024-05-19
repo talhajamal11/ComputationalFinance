@@ -84,6 +84,13 @@ build CMakeFiles/lecture_2.dir/Main10.cpp.o: CXX_COMPILER__lecture_2_unscanned_D
   OBJECT_DIR = CMakeFiles/lecture_2.dir
   OBJECT_FILE_DIR = CMakeFiles/lecture_2.dir
 
+build CMakeFiles/lecture_2.dir/DoubDigitOpt.cpp.o: CXX_COMPILER__lecture_2_unscanned_Debug /Users/talhajamal/Documents/Documents/Imperial/Courses/Semester$ 3/Computational$ Finance/code/lecture_2/DoubDigitOpt.cpp || cmake_object_order_depends_target_lecture_2
+  DEP_FILE = CMakeFiles/lecture_2.dir/DoubDigitOpt.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/talhajamal/Documents/Documents/Imperial/Courses/Semester 3/Computational Finance/code/lecture_2/."
+  OBJECT_DIR = CMakeFiles/lecture_2.dir
+  OBJECT_FILE_DIR = CMakeFiles/lecture_2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lecture_2
@@ -92,7 +99,7 @@ build CMakeFiles/lecture_2.dir/Main10.cpp.o: CXX_COMPILER__lecture_2_unscanned_D
 #############################################
 # Link the executable lecture_2
 
-build lecture_2: CXX_EXECUTABLE_LINKER__lecture_2_Debug CMakeFiles/lecture_2.dir/BinModel02.cpp.o CMakeFiles/lecture_2.dir/Options05.cpp.o CMakeFiles/lecture_2.dir/DefInt.cpp.o CMakeFiles/lecture_2.dir/Options06.cpp.o CMakeFiles/lecture_2.dir/Main10.cpp.o
+build lecture_2: CXX_EXECUTABLE_LINKER__lecture_2_Debug CMakeFiles/lecture_2.dir/BinModel02.cpp.o CMakeFiles/lecture_2.dir/Options05.cpp.o CMakeFiles/lecture_2.dir/DefInt.cpp.o CMakeFiles/lecture_2.dir/Options06.cpp.o CMakeFiles/lecture_2.dir/Main10.cpp.o CMakeFiles/lecture_2.dir/DoubDigitOpt.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/lecture_2.dir
   POST_BUILD = :

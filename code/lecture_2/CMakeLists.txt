@@ -14,4 +14,6 @@ add_executable(lecture_2
         DefInt.h
         Options06.h
         Options06.cpp
-        Main10.cpp)
+        Main10.cpp
+        DoubDigitOpt.h
+        DoubDigitOpt.cpp)
