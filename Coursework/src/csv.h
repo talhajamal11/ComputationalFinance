@@ -1,12 +1,10 @@
 #ifndef _CSV_H
 #define _CSV_H
 
-
 #include <iostream>
 #include <algorithm>
 #include <string>
 #include <vector>
-
 
 using namespace std;
 
@@ -33,9 +31,5 @@ private:
 	int advplain(const string& line, string& fld, int);
 	int advquoted(const string& line, string& fld, int);
 };
-
-
-
-
 
 #endif

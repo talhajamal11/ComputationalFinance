@@ -1,4 +1,6 @@
-
+/*
+ * This File contains the functions needed to read a CSV
+ */
 
 #include "csv.h"
 
@@ -96,4 +98,3 @@ string Csv::getfield(int n)
 	else
 		return field[n];
 }
-
