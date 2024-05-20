@@ -21,10 +21,8 @@ private:
 
     std::vector<double> meanReturns;
     std::vector< std::vector<double> > covarianceMatrix;
-    std::vector<double> conjugateGradient(const std::vector< std::vector<double> >& Q,
-                                          const std::vector<double>& b,
-                                          const std::vector<double>& x0,
-                                          double epsilon;)
+    std::vector<double> conjugateGradient(const std::vector<std::vector<double>> &Q, const std::vector<double> &b,
+                                          const std::vector<double> &x0);
 };
 
 

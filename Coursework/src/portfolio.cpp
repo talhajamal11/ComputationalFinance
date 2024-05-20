@@ -6,6 +6,7 @@
 #include <cmath>
 #include <numeric>
 #include <iostream>
+#include "linearAlgebra.h"
 
 // Constructor for Portfolio Class
 Portfolio::Portfolio(const std::vector<std::vector<double>> &returns, double targetReturn)
@@ -53,5 +54,52 @@ std::vector< std::vector<double> > Portfolio::calculateCovarianceMatrix() {
 std::vector<double> Portfolio::solveOptimization()
 {
     size_t n = meanReturns.size(); // number of Assets
-    std::vector< std::vector<double> > Q()
+    std::vector< std::vector<double> > Q(n + 2, std::vector<double>(n + 2, 0.0)); // Dimensions of Matrix Q
+    std::vector<double> b(n + 2, 0.0); // Dimensions of Vector b
+    std::vector<double> x0(n + 2, 0.0); // Dimensions of Vector X
+
+    // Fill Q Matrix
+    for (size_t i=0; i < n; ++i)
+    {
+        for (size_t j = 0; j < n; ++j)
+        {
+            Q[i][j] = covarianceMatrix[i][j];
+        }
+        Q[i][n] = -meanReturns[i];
+        Q[i][n+1] = -1.0;
+        Q[n][i] = -meanReturns[i];
+        Q[n+1][i] = -1.0;
+    }
+
+    // Fill b vector
+    b[n] = -targetReturn;
+    b[n+1] = -1.0;
+
+    // Solve for Qx = b by Conjugate Method
+    return conjugateGradient(Q, b, x0);
+}
+
+std::vector<double>
+Portfolio::conjugateGradient(const std::vector<std::vector<double>> &Q, const std::vector<double> &b,
+                             const std::vector<double> &x0) {
+    size_t n = b.size();
+    std::vector<double> x = x0;
+    std::vector<double> s = vectorSubtraction(b, matrixVectorMultiplication(Q, x0)); // s: b - Qx
+    std::vector<double> p = s; // set Initial Direction
+    double sTs = vectorDotProduct(s, s);
+
+    for (size_t i=0; i < n; ++i)
+    {
+        double alpha = sTs / (vectorDotProduct(p, matrixVectorMultiplication(Q, p))); // step size
+        x = vectorAddition(x, scalarMultiplication(p, alpha));
+        s = vectorSubtraction(s, scalarMultiplication(p, alpha));
+        double sTsNew = vectorDotProduct(s, s);
+        if (sTsNew < 1.0E-6)
+        {
+            break;
+        }
+        p = vectorAddition(s, scalarMultiplication(p, sTsNew/sTs));
+        sTs = sTsNew;
+    }
+    return x;
 }
