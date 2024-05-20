@@ -30,8 +30,12 @@ int  main (int  argc, char  *argv[])
     checkFileInCurrentDirectory(fileName); // Check if File Exists and File Path is correct
     readData(returnMatrix,fileName); // Read return data from the file and store in 2D returnMatrix
 
+    cout << "First Return : " << returnMatrix[0][0];
+
     // Test Linear Algebra Functions
-    testAllFunctions();
+    //testAllFunctions();
+
+
 
     // Delete Memory
     for(int i=0;i<numberAssets;i++)
