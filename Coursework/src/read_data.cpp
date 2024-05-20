@@ -1,4 +1,4 @@
-
+#include <unistd.h>
 #include <stdio.h>
 #include <fstream>
 #include <stdlib.h>
@@ -43,6 +43,35 @@ void readData(double **data,const string& fileName)
     else {
         cout <<fileName <<" missing\n";exit(0);
     }
+}
+
+bool checkFileInCurrentDirectory(const std::string& fileName)
+{
+    // Print the current working directory
+    char cwd[1024];
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        std::cout << "Current working dir: " << cwd << std::endl;
+    } else {
+        perror("getcwd() error");
+        return false;
+    }
+
+    // Construct the full path to the file
+    std::string fullPath = std::string(cwd) + "/" + fileName;
+
+    // Check if the file exists
+    std::ifstream file(fullPath);
+    if (!file)
+    {
+        std::cerr << "File " << fullPath << " does not exist." << std::endl;
+        return false;
+    }
+    else
+    {
+        std::cout << "File " << fullPath << " exists" << std::endl;
+    }
+    file.close();
+    return true;
 }
 
 /*

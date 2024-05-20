@@ -9,5 +9,6 @@
 
 double string_to_double( const std::string& s );
 void readData(double **data,const std::string& fileName);
+bool checkFileInCurrentDirectory(const std::string& fileName);
 
 #endif //COURSEWORK_READ_DATA_H

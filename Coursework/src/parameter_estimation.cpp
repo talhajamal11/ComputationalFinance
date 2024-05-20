@@ -7,6 +7,22 @@
 #include <vector>
 #include <cmath>
 
+// Example Usage of Both Functions
+
+/*
+ * Example Usage
+ * Calculate Mean Returns of First 10 Assets for 700 Periods
+ * int inSampleSize = 700;
+ * std::vector<double> meanReturns = calculateMean(returnMatrix, 10, inSampleSize);
+ * std::cout << "Mean Returns: " << std::endl;
+ * for (double mean: meanReturns)
+ * {
+ *     std::cout << mean << " ,";
+ * }
+ * std::cout << std::endl;
+ */
+
+
 std::vector<double> calculateMean(double** data, int numberAssets, int n)
 {
     std::vector<double> mean(numberAssets, 0.0);

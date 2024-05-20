@@ -13,16 +13,6 @@
 
 int  main (int  argc, char  *argv[])
 {
-
-    // Print the current working directory
-    char cwd[1024];
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        std::cout << "Current working dir: " << cwd << std::endl;
-    } else {
-        perror("getcwd() error");
-        return 1;
-    }
-
     int numberAssets = 83; // Initialize Number of Assets
     int numberReturns = 700; // Max Length of Returns Data
     double **returnMatrix = new double*[numberAssets]; // a matrix to store the return data
@@ -33,36 +23,23 @@ int  main (int  argc, char  *argv[])
 
     cout << "Reading Data" << std::endl;
 
-    // Construct the full path to the file
-    std::string fileName = "asset_returns.csv";
-    std::string fullPath = std::string(cwd) + "/" + fileName;
-
-    // Check if the file exists
-    std::ifstream file(fullPath);
-    if (!file)
-    {
-        std::cerr << "File " << fullPath << " does not exist." << std::endl;
-        return 1;
-    }
-    else
-    {
-        std::cout << "File " << fullPath << " exists" << std::endl;
-    }
-    file.close();
-
     //read the data from the file and store it into the return matrix
-    //string fileName="Coursework/src/asset_returns_small.csv";
-    readData(returnMatrix,fileName);
+    std::string fileName = "asset_returns.csv";
+    checkFileInCurrentDirectory(fileName); // Check if File Exists and File Path is correct
+    readData(returnMatrix,fileName); // Read return data from the file and store in 2D returnMatrix
 
-    // Calculate and Print Average of First 10 Assets
+    // Calculate Covariance Matrix
     int inSampleSize = 700;
-    std::vector<double> meanReturns = calculateMean(returnMatrix, 10, inSampleSize);
-    std::cout << "Mean Returns: " << std::endl;
-    for (double mean: meanReturns)
+    std::vector< std::vector<double> > covarianceMatrix = calculateCovarianceMatrix(returnMatrix, 3, inSampleSize);
+    std::cout << "CovarianceMatrix" << std::endl;
+    for (const auto& row: covarianceMatrix)
     {
-        std::cout << mean << " ,";
+        for(const auto& value: row)
+        {
+            std::cout << value << " ";
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
 
     // Delete Memory
     for(int i=0;i<numberAssets;i++)
