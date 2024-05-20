@@ -4,14 +4,13 @@
 #include <stdlib.h>
 #include <sstream>
 #include "csv.h"
+#include "read_data.h"
 
 //g++ -c read_data.cpp
 // g++ -c csv.cpp
 // g++ -o portfolioSolver csv.o read_data.o
 // ./portfolioSolver
 
-double string_to_double( const std::string& s );
-void readData(double **data,string fileName);
 
 double string_to_double( const std::string& s )
 {
@@ -22,7 +21,8 @@ double string_to_double( const std::string& s )
     return x;
 }
 
-void readData(double **data,string fileName){
+void readData(double **data,const string& fileName)
+{
     char tmp[20];
     ifstream file (strcpy(tmp, fileName.c_str()));
     Csv csv(file);
@@ -45,8 +45,9 @@ void readData(double **data,string fileName){
     }
 }
 
-
-int  main (int  argc, char  *argv[]){
+/*
+int  main (int  argc, char  *argv[])
+{
     int numberAssets=83; // Initialize Number of Assets
     int numberReturns=700; // Max Length of Returns Data
 	double **returnMatrix=new double*[numberAssets]; // a matrix to store the return data
@@ -57,7 +58,7 @@ int  main (int  argc, char  *argv[]){
     string fileName="asset_returns.csv";
 	readData(returnMatrix,fileName);
 	// returnMatrix[i][j] stores the asset i, return j value
-	
+	cout << returnMatrix[0][699];
     //example on how to calculate the average return
     double mean=0;
     for(int i=0;i<numberAssets;i++){
@@ -75,3 +76,4 @@ int  main (int  argc, char  *argv[]){
     
 	return 0;
 }
+*/
