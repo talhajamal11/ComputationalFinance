@@ -10,6 +10,8 @@
 #include "csv.h"
 #include "read_data.h"
 #include "parameter_estimation.h"
+#include "linearAlgebra.h"
+#include "unitTests.h"
 
 int  main (int  argc, char  *argv[])
 {
@@ -28,18 +30,8 @@ int  main (int  argc, char  *argv[])
     checkFileInCurrentDirectory(fileName); // Check if File Exists and File Path is correct
     readData(returnMatrix,fileName); // Read return data from the file and store in 2D returnMatrix
 
-    // Calculate Covariance Matrix
-    int inSampleSize = 700;
-    std::vector< std::vector<double> > covarianceMatrix = calculateCovarianceMatrix(returnMatrix, 3, inSampleSize);
-    std::cout << "CovarianceMatrix" << std::endl;
-    for (const auto& row: covarianceMatrix)
-    {
-        for(const auto& value: row)
-        {
-            std::cout << value << " ";
-        }
-        std::cout << std::endl;
-    }
+    // Test Linear Algebra Functions
+    testAllFunctions();
 
     // Delete Memory
     for(int i=0;i<numberAssets;i++)

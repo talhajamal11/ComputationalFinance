@@ -7,11 +7,8 @@
 #include <vector>
 #include <cmath>
 
-// Example Usage of Both Functions
-
+// Example Usage: Calculate Mean Returns of First 10 Assets for 700 Periods
 /*
- * Example Usage
- * Calculate Mean Returns of First 10 Assets for 700 Periods
  * int inSampleSize = 700;
  * std::vector<double> meanReturns = calculateMean(returnMatrix, 10, inSampleSize);
  * std::cout << "Mean Returns: " << std::endl;
@@ -20,6 +17,21 @@
  *     std::cout << mean << " ,";
  * }
  * std::cout << std::endl;
+ */
+
+// Example Usage: Calculate Covariance Matrix
+/*
+ *  int inSampleSize = 700;
+ *  std::vector< std::vector<double> > covarianceMatrix = calculateCovarianceMatrix(returnMatrix, 3, inSampleSize);
+ *  std::cout << "CovarianceMatrix" << std::endl;
+ *  for (const auto& row: covarianceMatrix)
+ *  {
+ *      for(const auto& value: row)
+ *      {
+ *          std::cout << value << " ";
+ *      }
+ *      std::cout << std::endl;
+    }
  */
 
 
