@@ -74,6 +74,19 @@ bool checkFileInCurrentDirectory(const std::string& fileName)
     return true;
 }
 
+std::vector< std::vector<double> > convertToVectorMatrix(double **returnMatrix, int numberAssets, int numberReturns)
+{
+    std::vector< std::vector<double> > vectorMatrix(numberAssets, std::vector<double>(numberReturns));
+
+    for (int i = 0; i < numberAssets; ++i) {
+        for (int j = 0; j < numberReturns; ++j) {
+            vectorMatrix[i][j] = returnMatrix[i][j];
+        }
+    }
+
+    return vectorMatrix;
+}
+
 /*
 int  main (int  argc, char  *argv[])
 {

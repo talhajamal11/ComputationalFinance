@@ -12,6 +12,7 @@
 #include "parameter_estimation.h"
 #include "linearAlgebra.h"
 #include "unitTests.h"
+#include "portfolio.h"
 
 int  main (int  argc, char  *argv[])
 {
@@ -30,10 +31,44 @@ int  main (int  argc, char  *argv[])
     checkFileInCurrentDirectory(fileName); // Check if File Exists and File Path is correct
     readData(returnMatrix,fileName); // Read return data from the file and store in 2D returnMatrix
 
-    cout << "First Return : " << returnMatrix[0][0];
+    // Convert to vector of vectors
+    std::vector<std::vector<double>> returns = convertToVectorMatrix(returnMatrix, numberAssets, numberReturns);
+
+    cout << "First Return : " << returns[0][0];
 
     // Test Linear Algebra Functions
     //testAllFunctions();
+
+    std::cout << "Checking if both meanReturn and covariance matrix function are calculated corectly" << std::endl;
+
+    std::cout << "Parameter Estimation Script:";
+    std::cout << " =========================== ";
+    std::cout << "Mean Return Calculation for First 10 Assets";
+    int inSampleSize = 700;
+    std::vector<double> meanReturns = calculateMean(returnMatrix, 10, inSampleSize);
+    std::cout << "Mean Returns: " << std::endl;
+    for (double mean: meanReturns)
+        {
+            std::cout << mean << " ,";
+        }
+    std::cout << std::endl;
+
+    std::cout << "Portfolio Class Method:";
+    std::cout << " =========================== ";
+    std::cout << "Mean Return Calculation for First 10 Assets";
+
+    double targetReturns = 0.10;
+    Portfolio portfolio(returns, targetReturns);
+
+    // Calculate mean returns
+    std::vector<double> portfolioMeanReturns = portfolio.calculateMeanReturns();
+    std::cout << "Portfolio Mean Returns:\n";
+    for (double r : portfolioMeanReturns) {
+        std::cout << r << " ";
+    }
+    std::cout << std::endl;
+
+
 
 
 
